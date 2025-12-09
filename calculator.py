@@ -20,3 +20,25 @@ print(f"{num1} * {num2} = {calculator.multiply(num1, num2)}")
 print(f"{num1} / {num2} = {calculator.divide(num1, num2)}") 
 # TODO: Uncomment and test the square root feature.
  # num3 = 25 
+def calculate_square_root():
+    try:
+        # Get user input
+        num_str = input("Enter a number: ").strip()
+        
+        # Try converting to float
+        num = float(num_str)
+        
+        if num >= 0:
+            # For non-negative numbers, use math.sqrt
+            result = math.sqrt(num)
+            print(f"Square root of {num} is {result}")
+        else:
+            # For negative numbers, use cmath.sqrt (returns complex number)
+            result = cmath.sqrt(num)
+            print(f"Square root of {num} is {result} (complex number)")
+    
+    except ValueError:
+        print("Invalid input. Please enter a valid numeric value.")
+
+if __name__ == "__main__":
+    calculate_square_root()
