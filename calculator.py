@@ -42,3 +42,27 @@ def calculate_square_root():
 
 if __name__ == "__main__":
     calculate_square_root()
+def divide_numbers(a, b):
+    """Returns the result of a / b with error handling."""
+    try:
+        return a / b  # True division (float result)
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+        return None
+
+def main():
+    try:
+        # Take user input
+        num1 = float(input("Enter the numerator: "))
+        num2 = float(input("Enter the denominator: "))
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+        return
+
+    result = divide_numbers(num1, num2)
+
+    if result is not None:
+        print(f"Result: {num1} / {num2} = {result}")
+
+if __name__ == "__main__":
+    main()
